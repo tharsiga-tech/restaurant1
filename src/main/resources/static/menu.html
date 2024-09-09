@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant Menu</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .menu-item {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .menu-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .menu-item-details {
+            flex: 1;
+        }
+        .menu-item-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .menu-item-description {
+            margin-bottom: 10px;
+        }
+        .menu-item-info {
+            font-style: italic;
+            color: #666;
+        }
+        .spice-level {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .vegetarian {
+            color: #27ae60;
+        }
+        .allergy-info {
+            color: #c0392b;
+            font-weight: bold;
+        }
+        .cultural-significance {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .menu-item-price {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+        #searchBar {
+            position: relative;
+            width: 300px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 20px;
+            padding-left: 40px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px 0 rgba(76,175,80,0.4);
+        }
+
+        #searchBar:before {
+            content: "\1F50D";
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 18px;
+        }
+
+        #searchInput::placeholder {
+            color: #aaa;
+        }
+
+        @media (max-width: 400px) {
+            #searchBar {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body background="images/light.jpg"> 
+    <div class="banner2">   <div id="searchBar">
+        <input type="text" id="searchInput" placeholder="Search menu items...">
+    </div>      <a href="/" style="text-decoration:none;" target="parent"> Home  </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="/about" style="text-decoration:none;" target="parent"> About Us </a>
+        &nbsp; &nbsp; &nbsp; <a href="/contact" style="text-decoration:none;" target="parent">Contact Us</a>
+        &nbsp; &nbsp; &nbsp; <a href="/menu" style="text-decoration:none;" target="parent">Restaurant Menu</a>
+        &nbsp; &nbsp; &nbsp; <a href="/services" style="text-decoration:none;" target="parent">Services</a>
+        &nbsp; &nbsp; &nbsp; <a href="/gallery" style="text-decoration:none;" target="parent">Gallery</a>
+        &nbsp; &nbsp; &nbsp; <a href="/index" style="text-decoration:none;" target="parent"> Reservation </a>
+        &nbsp; &nbsp; &nbsp;<a href="/feedback" style="text-decoration:none;" target="parent"> Feedback  </a>
+        &nbsp; &nbsp; &nbsp;<a href="/log" style="text-decoration:none;" target="parent"> Login  </a>
+
+        <h1>Sri Lankan Delights</h1>
+
+    <h2>Breakfast</h2>
+    <div class="menu-item">
+        <img src="images/milk.jpeg" alt="Milk Rice (Kiribath)">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Milk Rice (Kiribath)</div>
+            <div class="menu-item-description">A traditional dish of rice cooked in coconut milk, usually served with lunu miris (spicy onion sambol) or jaggery.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/string.jpg" alt="String Hoppers (Idiyappam)">
+        <div class="menu-item-details">
+            <div class="menu-item-name">String Hoppers (Idiyappam)</div>
+            <div class="menu-item-description">Steamed rice noodles served with coconut milk curry, dhal curry, or pol sambol.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Mild</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 250.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/pittu.jpg" alt="Pittu">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Pittu</div>
+            <div class="menu-item-description">A mix of rice flour and coconut, steamed in a cylindrical mold, typically served with coconut milk and curries.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+    
+    <div class="menu-item">
+        <img src="images/dosa.jpg" alt="Dosa">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Dosa</div>
+            <div class="menu-item-description">A thin, crispy crepe made from fermented rice and lentil batter, served with sambar and coconut chutney.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 300.00</div>
+        </div>
+    </div>
+    
+    <div class="menu-item">
+        <img src="images/PolRoti.jpg" alt="Pol Roti">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Pol Roti</div>
+            <div class="menu-item-description">Flatbread made with grated coconut, flour, and salt, often enjoyed with a curry or sambol.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+    
+    <div class="menu-item">
+        <img src="images/Hoppers.jpg" alt="Hoppers (Appam)">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Hoppers (Appa)</div>
+            <div class="menu-item-description">Bowl-shaped pancakes made from fermented rice flour, with a crispy edge and soft center, often topped with an egg.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Mild</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+    
+
+    <h2>Lunch</h2>
+    <div class="menu-item">
+        <img src="images/rice.jpg" alt="Rice and Curry">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Rice and Curry</div>
+            <div class="menu-item-description">A staple lunch meal with steamed rice served with a selection of curries (chicken, fish, vegetable), dhal, sambol, and pickles.</div>
+            <div class="menu-item-info">Preparation Time: 25 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 500.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/kottu.jpg" alt="Kottu Roti">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Kottu Roti</div>
+            <div class="menu-item-description">Stir-fried shredded roti bread mixed with vegetables, meat (chicken, beef, or mutton), or egg, seasoned with spices.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1-2 people | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 600.00</div>
+        </div>
+    </div>
+
+    <h2>Dinner</h2>
+    <div class="menu-item">
+        <img src="images/hopper.jpg" alt="Hoppers (Appam)">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Hoppers (Appam)</div>
+            <div class="menu-item-description">A popular dinner item, often served with egg, dhal curry, or chicken curry.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Mild</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/chicken.jpg" alt="Devilled Chicken/Beef/Prawns">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Devilled Chicken/Beef/Prawns</div>
+            <div class="menu-item-description">Spicy and tangy stir-fried dish with meat and vegetables, often served with rice or fried rice.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Extra Hot</span></div>
+            <div class="menu-item-price">Price: 750.00</div>
+        </div>
+    </div>
+
+    <h2>Appetizers</h2>
+    <div class="menu-item">
+        <img src="images/fish.jpg" alt="Fish Cutlets">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Fish Cutlets</div>
+            <div class="menu-item-description">Deep-fried fish balls made with spiced mashed potatoes and fish.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 4-6 pieces | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/samosa.jpg" alt="Chicken Samosa">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Chicken Samosa</div>
+            <div class="menu-item-description">Deep-fried pastry pockets filled with spiced minced chicken, onions, and peas.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 4-6 pieces | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 350.00</div>
+        </div>
+    </div>
+    
+    <div class="menu-item">
+        <img src="images/EggDevilled.jpg" alt="Egg Devilled">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Egg Devilled</div>
+            <div class="menu-item-description">Hard-boiled eggs fried with onions, chilies, and spices, creating a spicy and tangy appetizer.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 3-4 pieces | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 150.00</div>
+        </div>
+    </div>
+    
+    <div class="menu-item">
+        <img src="images/VegetablePatties.jpg" alt="Vegetable Patties">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Vegetable Patties</div>
+            <div class="menu-item-description">Pastry filled with spiced mixed vegetables, deep-fried until golden and crispy.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 4-6 pieces | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+
+    
+    <h2>Ice Cream and Desserts</h2>
+    <div class="menu-item">
+        <img src="images/wattapalam.jpg" alt="Watalappam">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Watalappam</div>
+            <div class="menu-item-description">A traditional Sri Lankan pudding made with coconut milk, jaggery, and spices like cardamom and nutmeg.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 4 people </div>
+            <div class="menu-item-price">Price: 500.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Kiri.jpg" alt="Kiri Pani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Kiri Pani</div>
+            <div class="menu-item-description">A simple dessert of buffalo curd served with palm treacle.</div>
+            <div class="menu-item-info">Preparation Time: 5 minutes | Serving Size: 1 person</div>
+            <div class="menu-item-price">Price: 300.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Coconutice.jpg" alt="Coconut Ice Cream">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Coconut Ice Cream</div>
+            <div class="menu-item-description">Creamy coconut ice cream topped with roasted cashews and a drizzle of treacle.</div>
+            <div class="menu-item-info">Serving Size: 2 scoops</div>
+            <div class="menu-item-price">Price: 500.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/MangoPassion.jpg" alt="Mango Passion Fruit Sorbet">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Mango Passion Fruit Sorbet</div>
+            <div class="menu-item-description">A refreshing sorbet made with ripe mangoes and tangy passion fruit.</div>
+            <div class="menu-item-info">Serving Size: 2 scoops</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+
+    <h2>Italian Cuisine</h2>
+    <div class="menu-item">
+        <img src="images/MargheritaPizza.jpg" alt="Margherita Pizza">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Margherita Pizza</div>
+            <div class="menu-item-description">Classic pizza with tomato sauce, fresh mozzarella, basil, and extra virgin olive oil.</div>
+            <div class="menu-item-info">Preparation Time: 25 minutes | Serving Size: 8 slices | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1600.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/SpaghettiCarbonara.jpg" alt="Spaghetti Carbonara">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Spaghetti Carbonara</div>
+            <div class="menu-item-description">Spaghetti with a creamy sauce made from eggs, Pecorino Romano cheese, pancetta, and black pepper.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 700.00</div>
+        </div>
+    </div>
+
+    <h2>Chinese Cuisine</h2>
+    <div class="menu-item">
+        <img src="images/KungPaoChicken.jpg" alt="Kung Pao Chicken">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Kung Pao Chicken</div>
+            <div class="menu-item-description">Spicy stir-fried chicken with peanuts, vegetables, and chili peppers.</div>
+            <div class="menu-item-info">Preparation Time: 25 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1200.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/VegetableSpringRolls.jpg" alt="Vegetable Spring Rolls">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Vegetable Spring Rolls</div>
+            <div class="menu-item-description">Crispy rolls filled with a mix of vegetables, served with sweet chili sauce.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 2 pieces| <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 250.00</div>
+        </div>
+    </div>
+
+    <h2>Burgers</h2>
+    <div class="menu-item">
+        <img src="images/ClassicCheeseburger.jpg" alt="Classic Cheeseburger">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Classic Cheeseburger</div>
+            <div class="menu-item-description">Juicy beef patty with cheddar cheese, lettuce, tomato, and special sauce on a toasted bun.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 burger | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 600.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/VeggieBurger.jpg" alt="Veggie Burger">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Veggie Burger</div>
+            <div class="menu-item-description">House-made vegetable patty with avocado, sprouts, and chipotle mayo on a whole grain bun.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 burger | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 500.00</div>
+        </div>
+    </div>
+
+    <h2>Soups</h2>
+    <div class="menu-item">
+        <img src="images/TomYumSoup.jpg" alt="Tom Yum Soup">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Tom Yum Soup</div>
+            <div class="menu-item-description">Thai hot and sour soup with shrimp, mushrooms, and aromatic spices.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 bowl | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/mashroom.jpg" alt="Cream of Mushroom Soup">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Cream of Mushroom Soup</div>
+            <div class="menu-item-description">Rich and creamy soup made with a variety of fresh mushrooms and herbs.</div>
+            <div class="menu-item-info">Preparation Time: 25 minutes | Serving Size: 1 bowl | <span class="spice-level">Spice Level: Mild</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 600.00</div>
+        </div>
+    </div>
+
+    <h2>Side Dishes</h2>
+    <div class="menu-item">
+        <img src="images/garlicnaan.jpg" alt="Garlic Naan">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Garlic Naan</div>
+            <div class="menu-item-description">Soft Indian flatbread topped with garlic and butter.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 2 pieces | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 600.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/GreekSalad.jpg" alt="Greek Salad">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Greek Salad</div>
+            <div class="menu-item-description">Fresh salad with tomatoes, cucumbers, olives, feta cheese, and olive oil dressing.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+    
+    <h2>Beverages</h2>
+    <div class="menu-item">
+        <img src="images/ceylon.jpg" alt="Ceylon Tea">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Ceylon Tea</div>
+            <div class="menu-item-description">World-famous Sri Lankan tea served plain or with milk.</div>
+            <div class="menu-item-info">Preparation Time: 5 minutes | Serving Size: 1 cup </div> 
+            <div class="menu-item-price">Price: 250.00</div>
+        </div>
+    </div>
+    <div class="menu-item"> 
+        <img src="images/faluda.jpg" alt="Faluda">
+        <div class="menu-item-details"> 
+            <div class="menu-item-name">Faluda</div>
+            <div class="menu-item-description">A cold, sweet beverage made with rose syrup, milk, ice cream, and basil seeds.</div>
+            <div class="menu-item-info">Preparation Time: 10 minutes | Serving Size: 1 glass</div>
+            <div class="menu-item-price">Price: 350.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/MangoLassi.jpg" alt="Mango Lassi">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Mango Lassi</div>
+            <div class="menu-item-description">A refreshing yogurt-based drink blended with fresh mango and a hint of cardamom.</div>
+            <div class="menu-item-info">Preparation Time: 5 minutes | Serving Size: 1 glass</div>
+            <div class="menu-item-price">Price: 250.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/lime.jpg" alt="Fresh Lime Soda">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Fresh Lime Soda</div>
+            <div class="menu-item-description">A popular refreshing drink made with fresh lime juice, sugar, and soda water.</div>
+            <div class="menu-item-info">Preparation Time: 3 minutes | Serving Size: 1 glass</div>
+            <div class="menu-item-price">Price: 200.00</div>
+        </div>
+    </div>
+
+    <h2>Noodles</h2> 
+    <div class="menu-item">
+        <img src="images/padthai.jpg" alt="Pad Thai">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Pad Thai</div>
+            <div class="menu-item-description">Stir-fried rice noodles with shrimp, tofu, peanuts, bean sprouts, and tamarind sauce.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 750.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/singapore.jpg" alt="Singapore Noodles">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Singapore Noodles</div>
+            <div class="menu-item-description">Stir-fried rice vermicelli with curry powder, shrimp, char siu pork, and vegetables.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Japchae.jpg" alt="Japchae">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Japchae</div>
+            <div class="menu-item-description">Korean glass noodles stir-fried with vegetables and beef, seasoned with soy sauce and sesame oil.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 450.00</div> 
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Beef.jpg" alt="Beef Chow Fun">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Beef Chow Fun</div>
+            <div class="menu-item-description">Stir-fried wide rice noodles with tender beef slices, bean sprouts, and scallions in a savory sauce.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 700.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Tonkotsu.jpg" alt="Ramen">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Tonkotsu Ramen</div>
+            <div class="menu-item-description">Japanese noodle soup with rich pork bone broth, chashu pork, soft-boiled egg, and various toppings.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 bowl | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 400.00</div>
+        </div>
+    </div>
+
+    <h2>Fried Rice</h2>
+    <div class="menu-item">
+        <img src="images/Yangzhou.jpg" alt="Yangzhou Fried Rice">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Yangzhou Fried Rice</div>
+            <div class="menu-item-description">Chinese fried rice with shrimp, pork, eggs, and mixed vegetables.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 650.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Pineapple.jpg" alt="Thai Pineapple Fried Rice">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Thai Pineapple Fried Rice</div>
+            <div class="menu-item-description">Fragrant fried rice with pineapple chunks, cashews, raisins, and curry powder, served in a pineapple bowl.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price:1100.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Kimchi.jpg" alt="Kimchi Fried Rice">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Kimchi Fried Rice</div>
+            <div class="menu-item-description">Korean-style fried rice with kimchi, spam or bacon, and topped with a fried egg.</div>
+            <div class="menu-item-info">Preparation Time: 15 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1000.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Nasi.jpg" alt="Nasi Goreng">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Nasi Goreng</div>
+            <div class="menu-item-description">Indonesian fried rice with sweet soy sauce, chicken, shrimp, and topped with a fried egg.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 900.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/seafood.jpg" alt="Seafood Fried Rice">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Seafood Fried Rice</div>
+            <div class="menu-item-description">Fried rice loaded with a variety of seafood including shrimp, squid, and scallops.</div>
+            <div class="menu-item-info">Preparation Time: 20 minutes | Serving Size: 1 person | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 950.00</div>
+        </div>
+    </div>
+
+    <h2>Biryani</h2>
+    <div class="menu-item">
+        <img src="images/chcikenbriyani.jpg" alt="Chicken Biryani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Chicken Biryani</div>
+            <div class="menu-item-description">Fragrant basmati rice cooked with spiced chicken, herbs, and caramelized onions.</div>
+            <div class="menu-item-info">Preparation Time: 35 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="menu-item-price">Price: 1400.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/vegbriyani.jpg" alt="Vegetable Biryani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Vegetable Biryani</div>
+            <div class="menu-item-description">Aromatic rice dish cooked with mixed vegetables, spices, and fresh herbs.</div>
+            <div class="menu-item-info">Preparation Time: 30 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1100.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Lambbriyani.jpg" alt="Lamb Biryani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Lamb Biryani</div>
+            <div class="menu-item-description">Rich and flavorful biryani made with tender lamb pieces, basmati rice, and a blend of aromatic spices.</div>
+            <div class="menu-item-info">Preparation Time: 30 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="menu-item-price">Price: 1600.00</div>
+        </div>
+    </div>
+
+
+    <div class="menu-item">
+        <img src="images/Prawnbriyani.jpg" alt="Prawn Biryani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Prawn Biryani</div>
+            <div class="menu-item-description">Delicate biryani featuring succulent prawns, fragrant rice, and a perfect balance of spices.</div>
+            <div class="menu-item-info">Preparation Time: 25 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Medium</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1200.00</div>
+        </div>
+    </div>
+
+    <div class="menu-item">
+        <img src="images/Hyderabadi.jpg" alt="Hyderabadi Biryani">
+        <div class="menu-item-details">
+            <div class="menu-item-name">Hyderabadi Biryani</div>
+            <div class="menu-item-description">A royal dish from Hyderabad, featuring layers of marinated meat and partially cooked rice, slow-cooked to perfection.</div>
+            <div class="menu-item-info">Preparation Time: 70 minutes | Serving Size: 2 people | <span class="spice-level">Spice Level: Hot</span></div>
+            <div class="vegetarian">Vegetarian Option Available</div>
+            <div class="menu-item-price">Price: 1700.00</div>
+        </div>
+    </div>
+</body>
+</html>

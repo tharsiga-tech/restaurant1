@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/Back (2).png');
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+        .form-control {
+            border-radius: 0; /* Remove form input border radius */
+            border-color: #ccc; /* Change form input border color */
+            box-shadow: none; /* Remove form input box shadow */
+        }
+        .form-group label {
+            font-weight: bold; /* Change font weight of form labels */
+        }
+        .button {
+            margin-top: 20px;
+            background-color: #0066cc; /* Change button background color */
+            border-color: #0066cc; /* Change button border color */
+        }
+        .button:hover {
+            background-color: #005cbf; /* Change button hover background color */
+            border-color: #005cbf; /* Change button hover border color */
+        }
+
+    </style>
+</head>
+<body background="images/light.jpg">                  
+    <form id="addMenuItemForm" action="/add-menu-item" method="POST" enctype="multipart/form-data">
+      <!-----  <form method="post" action="deletetrain.php" name="myForm" onsubmit="return validateForm()" > ----->
+        <h1>Add Menu Item</h1>
+        <label for="name">Item Name:</label>
+        <input type="text" id="name" name="name" required>
+        <div id="nameError" class="error"></div>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="3" required></textarea>
+        <div id="descriptionError" class="error"></div>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" step="0.01" required>
+        <div id="priceError" class="error"></div>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">Select a category</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+            <option value="appetizers">Appetizers</option>
+            <option value="desserts">Ice Cream and Desserts</option>
+            <option value="italian">Italian Cuisine</option>
+            <option value="chinese">Chinese Cuisine</option>
+            <option value="burgers">Burgers</option>
+            <option value="soups">Soups</option>
+            <option value="side-dishes">Side Dishes</option>
+            <option value="beverages">Beverages</option>
+            <option value="noodles">Noodles</option>
+            <option value="fried-rice">Fried Rice</option>
+            <option value="biryani">Biryani</option>
+        </select>
+        <div id="categoryError" class="error"></div>
+
+        <label for="preparation-time">Preparation Time (minutes):</label>
+        <input type="number" id="preparation-time" name="preparation-time" required>
+        <div id="preparationTimeError" class="error"></div>
+
+        <label for="serving-size">Serving Size:</label>
+        <input type="text" id="serving-size" name="serving-size" required>
+        <div id="servingSizeError" class="error"></div>
+
+        <label for="spice-level">Spice Level:</label>
+        <select id="spice-level" name="spice-level">
+            <option value="">Select spice level</option>
+            <option value="mild">Mild</option>
+            <option value="medium">Medium</option>
+            <option value="hot">Hot</option>
+            <option value="extra-hot">Extra Hot</option>
+        </select>
+        <div id="spiceLevelError" class="error"></div>
+
+        <label for="vegetarian">
+            <input type="checkbox" id="vegetarian" name="vegetarian"> Vegetarian Option Available
+        </label>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
+        <div id="imageError" class="error"></div>
+
+        <input type="submit" value="Add Menu Item">
+
+        <div id="click_here">
+            <a href="adminpage.html"><center> Back to Admin Panel </center></a>
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('addMenuItemForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+            // Validate Name
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                document.getElementById('nameError').textContent = 'Name is required';
+                isValid = false;
+            } else {
+                document.getElementById('nameError').textContent = '';
+            }
+
+            // Validate Description
+            const description = document.getElementById('description');
+            if (description.value.trim() === '') {
+                document.getElementById('descriptionError').textContent = 'Description is required';
+                isValid = false;
+            } else {
+                document.getElementById('descriptionError').textContent = '';
+            }
+
+            // Validate Price
+            const price = document.getElementById('price');
+            if (price.value === '' || isNaN(price.value) || Number(price.value) <= 0) {
+                document.getElementById('priceError').textContent = 'Please enter a valid price';
+                isValid = false;
+            } else {
+                document.getElementById('priceError').textContent = '';
+            }
+
+            // Validate Category
+            const category = document.getElementById('category');
+            if (category.value === '') {
+                document.getElementById('categoryError').textContent = 'Please select a category';
+                isValid = false;
+            } else {
+                document.getElementById('categoryError').textContent = '';
+            }
+
+            // Validate Preparation Time
+            const prepTime = document.getElementById('preparation-time');
+            if (prepTime.value === '' || isNaN(prepTime.value) || Number(prepTime.value) <= 0) {
+                document.getElementById('preparationTimeError').textContent = 'Please enter a valid preparation time';
+                isValid = false;
+            } else {
+                document.getElementById('preparationTimeError').textContent = '';
+            }
+
+            // Validate Serving Size
+            const servingSize = document.getElementById('serving-size');
+            if (servingSize.value.trim() === '') {
+                document.getElementById('servingSizeError').textContent = 'Serving size is required';
+                isValid = false;
+            } else {
+                document.getElementById('servingSizeError').textContent = '';
+            }
+
+            // Validate Spice Level
+            const spiceLevel = document.getElementById('spice-level');
+            if (spiceLevel.value === '') {
+                document.getElementById('spiceLevelError').textContent = 'Please select a spice level';
+                isValid = false;
+            } else {
+                document.getElementById('spiceLevelError').textContent = '';
+            }
+
+            // Validate Image
+            const image = document.getElementById('image');
+            if (image.files.length === 0) {
+                document.getElementById('imageError').textContent = 'Please select an image';
+                isValid = false;
+            } else {
+                document.getElementById('imageError').textContent = '';
+            }
+
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

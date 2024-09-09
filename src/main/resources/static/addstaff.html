@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+    <title>ABC Restaurant</title>
+<!-- Start Form Validation -->
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"] ["staffNameh"].value;
+	if(x=="")
+	{ 
+	    alert("Staff's Name must be filled out.");
+		return false;
+	}
+}
+</script>
+
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"] ["staffRoleh"].value;
+	if(x=="")
+	{ 
+	    alert("Staff's Role must be filled out.");
+		return false;
+	}
+}
+</script>
+
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"] ["staffEmailh"].value;
+	if(x=="")
+	{ 
+	    alert("Staff's Email must be filled out.");
+		return false;
+	}
+}
+</script>
+
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"] ["staffUsernameh"].value;
+	if(x=="")
+	{ 
+	    alert("Staff's Username must be filled out.");
+		return false;
+	}
+}
+</script>
+
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"]["staffPasswordh"].value;
+    if(x=="")
+    {
+        alert("Staff's Password must be filled out");
+        return false;
+    }
+}
+</script> 
+
+<script>
+function validateForm()
+{
+    let x=document.forms["myForm"]["staffPhoneh"].value;
+    if(x=="")
+    {
+        alert("Staff's Phone Number must be filled out");
+        return false;
+    }
+}
+</script> 
+<!-- End Form validation -->
+
+<!-- Start Cascading Style Sheet -->
+    <style>
+        body {
+            background-image: url('images/Back (2).png'); /* Change background image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif; /* Change font style */
+            color: #333;
+        }.well {
+            left: 110px;
+          
+        }
+        .form-control {
+            border-radius: 0; /* Remove form input border radius */
+            border-color: #ccc; /* Change form input border color */
+            box-shadow: none; /* Remove form input box shadow */
+        }
+        .form-group label {
+            font-weight: bold; /* Change font weight of form labels */
+        }
+        .button {
+            margin-top: 20px;
+            background-color: #0066cc; /* Change button background color */
+            border-color: #0066cc; /* Change button border color */
+        }
+        .button:hover {
+            background-color: #005cbf; /* Change button hover background color */
+            border-color: #005cbf; /* Change button hover border color */
+        }
+    </style>
+	<!-- End Cascading Style Sheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin/css/reg.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <br> <br>
+        <div class='row'>
+            <div class='col-md-2'></div>
+            <div class='col-md-6 well'>
+                <div class="well">
+                    <h2><center> Add Staff Member
+  </center></h2>
+                    <hr>
+                    <form method="post" action="" name="myForm" onsubmit="return validateForm()" >
+                        <div class="form-group">
+                            <label for="staff-name"> Name:</label>
+                            <input type="text" class="form-control" id= "staff-name" name="staffNameh" placeholder="Enter Staff's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff-role"> Role:</label>
+                            <input type="text" class="form-control" id= "staff-role" name="staffRoleh" placeholder="Enter Staff's Role" required>
+                        </div> 
+                        <div class="form-group">
+                            <label for="staff-email">Email:</label>&nbsp;&nbsp;&nbsp;
+                            <input type="email" class="form-control" id= "staff-email" name="staffEmailh" placeholder="Enter Staff's Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff-username">Username:</label>&nbsp;&nbsp;&nbsp;
+                            <input type="text" class="form-control" id= "staff-username" name="staffUsernameh" placeholder="Enter Username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff-password">Password:</label>&nbsp;&nbsp;&nbsp;
+                            <input type="password" class="form-control" id= "staff-password" name="staffPasswordh" placeholder="Enter Password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="staff-phone">Phone Number:</label>&nbsp;&nbsp;&nbsp;
+                            <input type="tel" class="form-control" id= "staff-phone" name="staffPhoneh" placeholder="Enter Staff's Phone Number" required>
+                        </div>
+                       
+                        <center>
+                            <button type="submit" class="btn btn-lg btn-primary button" name="submit">  Add </button>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button type="submit" class="btn btn-lg btn-primary button" name="submit">  Cancel </button>
+                        </center>
+                        <br>
+                       
+
+						<div id="click_here">
+							<a href="adminpage.html"><center> Back to Admin Panel </center></a>
+						</div>
+					</form>
+				</div>       
+			</div>
+		</div>
+    </div>  
+</body>
+</html>

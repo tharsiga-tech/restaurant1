@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Reservation - ABC Restaurant</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0; 
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .reservation-container {
+            background:#f1f1f1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .reservation-container h2 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .reservation-container label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .reservation-container input[type="text"],
+        .reservation-container input[type="email"],
+        .reservation-container input[type="date"],
+        .reservation-container input[type="time"],
+        .reservation-container input[type="number"],
+        .reservation-container textarea,
+        .reservation-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #495057;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .reservation-container input[type="text"]:focus,
+        .reservation-container input[type="email"]:focus,
+        .reservation-container input[type="date"]:focus,
+        .reservation-container input[type="time"]:focus,
+        .reservation-container input[type="number"]:focus,
+        .reservation-container textarea:focus,
+        .reservation-container select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .reservation-container input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .reservation-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .reservation-container .special-requests {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .reservation-container {
+                padding: 20px;
+            }
+
+            .reservation-container h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body background="images/home_bg.jpg"> 
+    <div class="reservation-container">
+        <br> <br> <br> <br> <br> <br> <br> <br> <br>   <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+        <h2>Reserve a Table</h2>
+        <form id="tableForm" method="post">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="phoneNo">Phone Number</label>
+            <input type="text" id="phoneNo" name="phoneNo" placeholder="Enter your phone number" required>
+
+            <label for="rate">Check Rate:</label>
+             <a href="menu.html" style="text-decoration:none;" target="parent">  <input type="button" id="rate" name="rate" value="Go to Menu"> </a>
+<br> <br>
+            <div class="radio-group">
+                <label for="checkavailable" >Check Availability(Always Available):</label>
+                <label>
+                    <input type="radio" id="checkavailable" name="checkavailable" value="Yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="checkavailable" value="No" required> No
+                </label>
+            </div>
+
+            <label for="date">Reservation Date</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Reservation Time</label>
+            <input type="time" id="time" name="time" required>
+
+            <label for="guests">Number of Guests</label>
+            <input type="number" id="guests" name="guests" min="1" max="20" required>
+
+            <label for="amount">Amount</label>
+            <input type="number" id="amount" name="amount"  required>
+
+            <label for="requests" class="special-requests">Special Requests</label>
+            <textarea id="requests" name="requests" rows="4" placeholder="Any special requests (optional)"></textarea>
+
+            <input type="submit" value="Reserve Table">
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const form = document.getElementById('tableForm');
+
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    const table = {
+                        fullName: document.getElementById('fullName').value,
+                        email: document.getElementById('email').value,
+                        phoneNo: document.getElementById('phoneNo').value,
+                        rate: document.getElementById('rate').value,
+                        checkavailable: document.getElementById('checkavailable').value,
+                        date: document.getElementById('date').value,
+                        time: document.getElementById('time').value,
+                        guests: document.getElementById('guests').value,
+                        amount: document.getElementById('amount').value,
+                        requests: document.getElementById('requests').value
+                    };
+
+                    fetch('/addTableReservation', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(feedback)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        alert('Table Reservation Booked successfully!');
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        alert('Error submitting reservation. Please try again.');
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

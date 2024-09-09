@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant Services, Offers, and Facilities</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #2c3e50;
+            padding-bottom: 10px;
+        }
+        .item {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .item img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .item-details {
+            flex: 1;
+        }
+        .item-name {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        .item-description {
+            margin-bottom: 10px;
+        }
+        .item-info {
+            font-style: italic;
+            color: #666;
+        }
+        #searchBar {
+            position: relative;
+            width: 300px;
+        }
+
+        #searchInput {
+            width: 100%;
+            padding: 12px 20px;
+            padding-left: 40px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        #searchInput:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px 0 rgba(76,175,80,0.4);
+        }
+
+        #searchBar:before {
+            content: "\1F50D";
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+            color: #888;
+            font-size: 18px;
+        }
+
+        #searchInput::placeholder {
+            color: #aaa;
+        }
+
+        @media (max-width: 400px) {
+            #searchBar {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body background="images/light.jpg"> 
+    <div class="banner2">   <div id="searchBar">
+        <input type="text" id="searchInput" placeholder="Search">
+    </div>      <a href="/" style="text-decoration:none;" target="parent"> Home  </a>
+        &nbsp; &nbsp; &nbsp;
+        <a href="/about" style="text-decoration:none;" target="parent"> About Us </a>
+        &nbsp; &nbsp; &nbsp; <a href="/contact" style="text-decoration:none;" target="parent">Contact Us</a>
+        &nbsp; &nbsp; &nbsp; <a href="/menu" style="text-decoration:none;" target="parent">Restaurant Menu</a>
+        &nbsp; &nbsp; &nbsp; <a href="/services" style="text-decoration:none;" target="parent">Services</a>
+        &nbsp; &nbsp; &nbsp; <a href="/gallery" style="text-decoration:none;" target="parent">Gallery</a>
+        &nbsp; &nbsp; &nbsp; <a href="/index" style="text-decoration:none;" target="parent"> Reservation </a>
+        &nbsp; &nbsp; &nbsp;<a href="/feedback" style="text-decoration:none;" target="parent"> Feedback  </a>
+        &nbsp; &nbsp; &nbsp;<a href="/log" style="text-decoration:none;" target="parent"> Login  </a>
+    </div> 
+    <h2>Services</h2>
+    <div class="item">
+        <img src="images/dinein.jpg" alt="Dine-in Service">
+        <div class="item-details">
+            <div class="item-name">Dine-in Service</div>
+            <div class="item-description">Enjoy our delicious meals in our comfortable and stylish dining area.</div>
+            <div class="item-info">Hours: 11:00 AM - 10:00 PM | Reservation recommended for groups</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/takeaway.jpg" alt="Takeaway Service">
+        <div class="item-details">
+            <div class="item-name">Takeaway Service</div>
+            <div class="item-description">Order your favorite dishes to enjoy at home or on-the-go.</div>
+            <div class="item-info">Hours: 11:00 AM - 9:30 PM | Call ahead for quicker service</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/homedelivery.jpg" alt="Home Delivery">
+        <div class="item-details">
+            <div class="item-name">Home Delivery</div>
+            <div class="item-description">Have our delicious food delivered right to your doorstep.</div>
+            <div class="item-info">Hours: 11:30 AM - 9:00 PM | Free delivery for orders over Rs.10,000</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/Catering.jpg" alt="Catering Service">
+        <div class="item-details">
+            <div class="item-name">Catering Service</div>
+            <div class="item-description">Let us cater your next event with our delectable menu options.</div>
+            <div class="item-info">Available for both corporate and private events | Minimum 24 hours notice required</div>
+        </div>
+    </div>
+
+    <h2>Special Offers</h2>
+    <div class="item">
+        <img src="images/happy.jpg" alt="Happy Hour">
+        <div class="item-details">
+            <div class="item-name">Happy Hour</div>
+            <div class="item-description">Enjoy discounted drinks and appetizers during our daily happy hour.</div>
+            <div class="item-info">Time: 4:00 PM - 6:00 PM | 50% off on selected drinks</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/weekend.jpg" alt="Weekend Brunch">
+        <div class="item-details">
+            <div class="item-name">Weekend Brunch</div>
+            <div class="item-description">Indulge in our special brunch menu every Saturday and Sunday.</div>
+            <div class="item-info">Time: 10:00 AM - 2:00 PM | Includes complimentary mimosa</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/loyality.jpg" alt="Loyalty Program">
+        <div class="item-details">
+            <div class="item-name">Loyalty Program</div>
+            <div class="item-description">Join our loyalty program and earn points on every purchase.</div>
+            <div class="item-info">Earn 1 point for every Rs. 2,500 spent | Redeem points for discounts</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/familynight.jpg" alt="Family Night">
+        <div class="item-details">
+            <div class="item-name">Family Night</div>
+            <div class="item-description">Every Tuesday, kids eat free with the purchase of an adult entree.</div>
+            <div class="item-info">Valid for children under 12 | One free kids' meal per adult entree</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/seasonal.png" alt="Seasonal Menu">
+        <div class="item-details">
+            <div class="item-name">Seasonal Menu</div>
+            <div class="item-description">Try our rotating selection of seasonal dishes featuring fresh, local ingredients.</div>
+            <div class="item-info">Changes quarterly | Ask your server for current offerings</div>
+        </div>
+    </div>
+
+    <h2>Facilities</h2>
+    <div class="item">
+        <img src="images/private.jpg" alt="Private Dining Room">
+        <div class="item-details">
+            <div class="item-name">Private Dining Room</div>
+            <div class="item-description">Host your special events in our elegant private dining area.</div>
+            <div class="item-info">Capacity: Up to 20 people | Advance booking required</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/outdoor.jpg" alt="Outdoor Patio">
+        <div class="item-details">
+            <div class="item-name">Outdoor Patio</div>
+            <div class="item-description">Enjoy al fresco dining in our beautiful outdoor seating area.</div>
+            <div class="item-info">Weather permitting | Heaters available for cooler evenings</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/wifi.jpg" alt="Free Wi-Fi">
+        <div class="item-details">
+            <div class="item-name">Free Wi-Fi</div>
+            <div class="item-description">Stay connected with our complimentary high-speed internet.</div>
+            <div class="item-info">Available throughout the restaurant | Ask staff for password</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/parking.jpg" alt="Parking">
+        <div class="item-details">
+            <div class="item-name">Parking</div>
+            <div class="item-description">Convenient parking options for our guests.</div>
+            <div class="item-info">Free parking for customers | Valet service available on weekends</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/wheel.jpg" alt="Wheelchair Accessibility">
+        <div class="item-details">
+            <div class="item-name">Wheelchair Accessibility</div>
+            <div class="item-description">Our restaurant is fully accessible for guests with mobility needs.</div>
+            <div class="item-info">Ramp access | Spacious aisles | Accessible restrooms</div>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="images/children.jpg" alt="Children's Play Area">
+        <div class="item-details">
+            <div class="item-name">Children's Play Area</div>
+            <div class="item-description">Keep your little ones entertained in our safe and fun play corner.</div>
+            <div class="item-info">Suitable for ages 3-8 | Parental supervision required</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Order - ABC Restaurant</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .delivery-container {
+            background:#f1f1f1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .delivery-container h2 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .delivery-container label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .delivery-container input[type="text"],
+        .delivery-container input[type="email"],
+        .delivery-container input[type="tel"],
+        .delivery-container input[type="date"],
+        .delivery-container input[type="time"],
+        .delivery-container textarea,
+        .delivery-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #495057;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .delivery-container input[type="text"]:focus,
+        .delivery-container input[type="email"]:focus,
+        .delivery-container input[type="tel"]:focus,
+        .delivery-container input[type="date"]:focus,
+        .delivery-container input[type="time"]:focus,
+        .delivery-container textarea:focus,
+        .delivery-container select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .delivery-container input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .delivery-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .delivery-container {
+                padding: 20px;
+            }
+
+            .delivery-container h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body background="images/home_bg.jpg"> 
+    <div class="delivery-container">
+        
+        <h2>Search Delivery Order Reservation</h2>
+        <form action="/submit-delivery" method="POST">
+            <label for="id">Delivery Order ID</label>
+            <input type="text" id="id" name="id" placeholder="Enter delivery order ID" required>
+
+            <input type="submit" value="Search Order">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Order - ABC Restaurant</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .delivery-container {
+            background:#f1f1f1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .delivery-container h2 {
+            text-align: center;
+            color: #343a40;
+            margin-bottom: 30px;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+
+        .delivery-container label {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: #495057;
+            font-size: 14px;
+        }
+
+        .delivery-container input[type="text"],
+        .delivery-container input[type="email"],
+        .delivery-container input[type="tel"],
+        .delivery-container input[type="date"],
+        .delivery-container input[type="time"],
+        .delivery-container textarea,
+        .delivery-container select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #495057;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        .delivery-container input[type="text"]:focus,
+        .delivery-container input[type="email"]:focus,
+        .delivery-container input[type="tel"]:focus,
+        .delivery-container input[type="date"]:focus,
+        .delivery-container input[type="time"]:focus,
+        .delivery-container textarea:focus,
+        .delivery-container select:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .delivery-container input[type="submit"] {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 14px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .delivery-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        @media (max-width: 600px) {
+            .delivery-container {
+                padding: 20px;
+            }
+
+            .delivery-container h2 {
+                font-size: 20px;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body background="images/home_bg.jpg"> 
+    <div class="delivery-container">
+        <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
+        <h2>Delivery Order Reservation</h2>
+        <form action="" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="rate">Check Rate:</label>
+             <a href="menu.html" style="text-decoration:none;" target="parent">  <input type="button" value="Go to Menu"> </a>
+<br> <br>
+            <div class="radio-group">
+                <label>Check Availability(Always Available):</label>
+                <label>
+                    <input type="radio" name="checkavailable" value="Yes" required> Yes
+                </label>
+                <label>
+                    <input type="radio" name="checkavailable" value="No" required> No
+                </label>
+            </div>
+
+            <label for="address">Delivery Address</label>
+            <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
+
+            <label for="order-details">Order Details</label>
+            <textarea id="order-details" name="order-details" rows="4" placeholder="Enter your order details" required></textarea>
+
+            <label for="amount">Amount</label>
+            <input type="text" id="amount" name="amount"  required>
+
+            <label for="delivery-date">Preferred Delivery Date</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+
+            <label for="delivery-time">Preferred Delivery Time</label>
+            <input type="time" id="delivery-time" name="delivery-time" required>
+
+            <input type="submit" value="Place Order">
+        </form>
+    </div>
+</body>
+</html>

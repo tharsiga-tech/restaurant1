@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC Restaurant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('images/Back (2).png');
+            line-height: 1.6;
+            color: #333;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #4a4a4a;
+        }
+        form {
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="file"] {
+            margin-bottom: 10px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -5px;
+            margin-bottom: 10px;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #0066cc;
+            border-color: #0066cc; 
+        }
+        .button:hover {
+            background-color: #005cbf; 
+            border-color: #005cbf; 
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="deleteMenuItemForm" action="/delete-menu-item" method="POST" enctype="multipart/form-data">
+      <!-----  <form method="post" action="deletetrain.php" name="myForm" onsubmit="return validateForm()" > ----->
+        <h1>Delete Menu Item</h1> 
+        <label for="id">Item ID:</label>
+        <input type="text" id="id" name="id" required>
+        <div id="idError" class="error"></div>
+
+        <input type="submit" value="Delete Menu Item">
+
+						<div id="click_here">
+							<a href="adminpage.html"><center> Back to Admin Panel </center></a>
+						</div>
+    </form>
+
+    <script>
+        document.getElementById('deleteMenuItemForm').addEventListener('submit', function(event) {
+            let isValid = true;
+
+
+             // Validate ID
+             const id = document.getElementById('id');
+            if (id.value.trim() === '') {
+                document.getElementById('idError').textContent = 'ID is required';
+                isValid = false;
+            } else {
+                document.getElementById('idError').textContent = '';
+            }        
+        });
+    </script>
+</body>
+</html>

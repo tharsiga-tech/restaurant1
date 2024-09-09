@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<head>
+    <title>ABC Restaurant</title>
+	<style>
+	body {
+            background-image: url('images/Back (2).png');
+            height:100%;
+			width:100%;
+			}
+            .well {
+            left: 10%;
+        }
+            .form-container {
+		margin-top: 50px;
+		background-color: #fff;
+		padding: 30px;
+		border-radius: 5px;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.form-container h2 {
+		color: #ffbb2b;
+		text-align: center;
+		margin-bottom: 20px;
+	}
+
+	.form-container input[type=text] {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 20px;
+		border: none;
+		border-radius: 5px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+		font-size: 16px;
+		color: #333;
+	}
+
+	.form-container input[type=submit] {
+		background-color: #ffbb2b;
+		color: #fff;
+		border: none;
+		padding: 10px 20px;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		transition: background-color 0.3s ease-in-out;
+	}
+
+	.form-container input[type=submit]:hover {
+		background-color: #e29f24;
+	}
+
+	.form-container a {
+		color: #fff;
+		text-decoration: none;
+	}
+
+	.form-container a:hover {
+		text-decoration: underline;
+	}
+</style>
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+        }
+		</style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="admin/css/reg.css" type="text/css">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<body>
+    <div class="container">
+     <br> <br> 
+       
+                            <div class='row'>
+                            <div class='col-md-2'></div>
+                            <div class='col-md-6 well'>
+
+      <div class="well">
+            <h2><center> Add New Special Offer  </center> </h2>
+            <hr>
+            <form method="post" action="">
+        
+                <div class="form-group">
+                    <label for="offer-name">Offer Name:</label>
+                    <input type="text" class="form-control" id="offer-name" name="offer-name" required>
+                </div>
+        
+                <div class="form-group">
+                    <label for="offer-image">Offer Image:</label>
+                    <input type="file" class="form-control" id="offer-image" name="offer-image" accept="image/*" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer-description">Offer Description:</label>
+                    <textarea id="offer-description" class="form-control" name="offer-description" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer-info">Offer Information:</label>
+                    <textarea id="offer-info" class="form-control" name="offer-info" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer-start-date">Start Date:</label>
+                    <input type="date" id="offer-start-date" class="form-control" name="offer-start-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer-end-date">End Date:</label>
+                    <input type="date" id="offer-end-date" class="form-control" name="offer-end-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="offer-type">Offer Type:</label>
+                    <select id="offer-type" class="form-control" name="offer-type" required>
+                        <option value="">Select Offer Type</option>
+                        <option value="happy-hour">Happy Hour</option>
+                        <option value="weekend-special">Weekend Special</option>
+                        <option value="loyalty-program">Loyalty Program</option>
+                        <option value="family-night">Family Night</option>
+                        <option value="seasonal-menu">Seasonal Menu</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+        
+         
+				<center>
+                <button type="submit" class="btn btn-lg btn-primary button" name="submit">  Add </button>
+				&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+				<button type="submit" class="btn btn-lg btn-primary button" name="submit">  Cancel </button>
+                </center>
+               <br>
+                <div id="click_here">
+                    <a href="adminpage.html"><center> Back to Admin Panel </center></a>
+                </div>
+            </form>
+        </div>       
+        </div>
+		</div>
+		</div>
+    </div>  
+</body>
+
+</html>

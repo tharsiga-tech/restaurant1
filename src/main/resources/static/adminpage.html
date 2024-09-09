@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>  
+    <title>ABC Restaurant</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <style>
+        .well {
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            height: 200px;
+        }
+        
+        body {
+            background-image: url('images/BACK (2).png');
+            height:100%;
+			width:100%;
+        }
+        
+        h4 {
+            color: #ffbb2b;
+        }
+        
+        ul {
+            color: white;
+            font-size: 13px;
+        }
+		
+		.navbar-inverse {
+			background-color: #000;
+			border-color: #000;
+			font-family: Arial, sans-serif;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+		<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <ul class="nav navbar-nav">
+                    <center> <h2> Admin </h2> </center>
+
+                   <li class="active"><a href="addstaff.html">Staff Management</a></li> 	
+                       
+                   <li class="active"><a href="addmenu.html">Menu</a></li> 	
+                   
+                   <li class="active"><a href="tablereservation.html">Table Reservation</a></li> 	
+
+                   <li class="active"><a href="deliveryorder.html">Delivery Reservation</a></li> 	
+
+                   <li class="active"><a href="addservices.html">Services</a></li>
+
+                   <li class="active"><a href="addoffers.html">Offers</a></li>
+
+                   <li class="active"><a href="addfacilities.html">Facilities</a></li >
+
+                    <li class="active"><a href="addgallery.html">Gallery</a></li >
+                   
+                   <li class="active"><a href="contact.html">Query</a></li>
+                   
+                   <li class="active"><a href="feedback.html">Feedback</a></li> 	
+               </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="Adminlogout.php">
+							<button type="button" class="btn btn-danger">  Logout </button>		
+                     </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+		
+		
+		<div class="row">
+           <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+                <h4>Manage Staff </h4>
+                <hr>
+                <ul>
+                    <li><a href="addstaff.html"> Add Staff Form</a></li>
+					<li><a href="updatestaff.html"> Update Staff Form</a></li>
+					<li><a href="deletestaff.html"> Delete Staff Form</a></li>
+					<li><a href="searchstaff.html"> Search Staff Form</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>  
+		
+		<div class="row">
+           <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+                <h4>Manage Menu</h4>
+                <hr>
+                <ul>
+                    <li><a href="addmenu.html"> Add Menu Item</a></li>
+					<li><a href="updatemenu.html"> Update Menu Item</a></li>
+					<li><a href="deletemenu.html"> Delete Menu Item</a></li>
+					<li><a href="searchmenu.html"> Search Menu Item</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>  
+		
+		<div class="row">
+           <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+                <h4>Manage Table Reservation</h4>
+                <hr>
+                <ul>
+                    <li><a href="tablereservation.html"> Add Table Reservation Form </a></li>
+					<li><a href="updatetable.html"> Update Table Reservation Form</a></li>
+					<li><a href="deletetable.html"> Delete Table Reservation Form</a></li>
+					<li><a href="searchtable.html"> Search Table Reservation Form</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>   
+		
+		<div class="row">
+           <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+                <h4>Manage Delivery Reservation</h4>
+                <hr>
+                <ul>
+                    <li><a href="deliveryorder.html"> Add Delivery Reservation Form </a></li>
+					<li><a href="updateorder.html"> Update Delivery Reservation Form</a></li>
+					<li><a href="deleteorder.html"> Delete Delivery Reservation Form</a></li>
+					<li><a href="searchorder.html"> Search Delivery Reservation Form</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div> 
+        
+        <div class="row">
+            <div class="col-md-3"></div>
+             <div class="col-md-6 well">
+                 <h4>Manage Services</h4>
+                 <hr>
+                 <ul>
+                     <li><a href="addservices.html"> Add Services Form </a></li>
+                     <li><a href="updateservices.html"> Update Services Form</a></li>
+                     <li><a href="deleteservices.html"> Delete Services Form</a></li>
+                     <li><a href="searchservices.html"> Search Services Form</a></li>
+                 </ul>
+             </div>
+             <div class="col-md-3"></div>
+         </div> 
+
+         <div class="row">
+            <div class="col-md-3"></div>
+             <div class="col-md-6 well">
+                 <h4>Manage Offers</h4>
+                 <hr>
+                 <ul>
+                     <li><a href="addoffers.html"> Add Offers Form </a></li>
+                     <li><a href="updateoffers.html"> Update Offers Form</a></li>
+                     <li><a href="deleteoffers.html"> Delete Offers Form</a></li>
+                     <li><a href="searchoffers.html"> Search Offers Form</a></li>
+                 </ul>
+             </div>
+             <div class="col-md-3"></div>
+         </div> 
+
+         <div class="row">
+            <div class="col-md-3"></div>
+             <div class="col-md-6 well">
+                 <h4>Manage Facilities</h4>
+                 <hr>
+                 <ul>
+                     <li><a href="addfacility.html"> Add Facilities Form </a></li>
+                     <li><a href="updatefacility.html"> Update Facilities Form</a></li>
+                     <li><a href="deletefacility.html"> Delete Facilities Form</a></li>
+                     <li><a href="searchfacility.html"> Search Facilities Form</a></li>
+                 </ul>
+             </div>
+             <div class="col-md-3"></div>
+         </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6 well">
+                <h4>Manage Gallery</h4>
+                <hr>
+                <ul>
+                    <li><a href="addgallery.html"> Add Gallery Form </a></li>
+                    <li><a href="updategallery.html"> Update Gallery Form</a></li>
+                    <li><a href="deletegallery.html"> Delete Gallery Form</a></li>
+                    <li><a href="searchgallery.html"> Search Gallery Form</a></li>
+                    <li><a href=""> All Galleries </a></li>
+                </ul>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3"></div>
+             <div class="col-md-6 well">
+                 <h4>Manage Query</h4>
+                 <hr>
+                 <ul>
+                     <li><a href="contact.html"> Add Query Form </a></li>
+                     <li><a href="updatecontact.html"> Update Query Form</a></li>
+                     <li><a href="deletecontact.html"> Delete Query Form</a></li>
+                     <li><a href="searchcontact.html"> Search Query Form</a></li>
+                     <li><a href=""> All Queries </a></li>
+                 </ul>
+             </div>
+             <div class="col-md-3"></div>
+         </div>  
+
+         <div class="row">
+            <div class="col-md-3"></div>
+             <div class="col-md-6 well">
+                 <h4>Manage Feedback</h4>
+                 <hr>
+                 <ul>
+                     <li><a href="feedback.html"> Add Feedback Form </a></li>
+                     <li><a href="updatefeedback.html"> Update Feedback Form</a></li>
+                     <li><a href="deletefeedback.html"> Delete Feedback Form</a></li>
+                     <li><a href="searchfeedback.html"> Search Feedback Form</a></li>
+                     <li><a href=""> All Feedbacks </a></li>
+                 </ul>
+             </div>
+             <div class="col-md-3"></div>
+         </div> 
+</body>
+</html> 

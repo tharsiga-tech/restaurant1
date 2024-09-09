@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<head>
+    <title>ABC Restaurant</title>
+    <style>
+        body {
+            background-image: url('images/Back (2).png'); /* Change background image */
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif; /* Change font style */
+            color: #333;
+        }.well {
+            left: 110px;
+          
+        }
+        .form-control {
+            border-radius: 0; /* Remove form input border radius */
+            border-color: #ccc; /* Change form input border color */
+            box-shadow: none; /* Remove form input box shadow */
+        }
+        .form-group label {
+            font-weight: bold; /* Change font weight of form labels */
+        }
+        .button {
+            margin-top: 20px;
+            background-color: #0066cc; /* Change button background color */
+            border-color: #0066cc; /* Change button border color */
+        }
+        .button:hover {
+            background-color: #005cbf; /* Change button hover background color */
+            border-color: #005cbf; /* Change button hover border color */
+        }
+    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="admin/css/reg.css" type="text/css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <br> <br>
+        <div class='row'>
+            <div class='col-md-2'></div>
+            <div class='col-md-6 well'>
+                <div class="well">
+                    <h2><center> Update Contact Form  </center></h2>
+                    <hr>
+                    <form id="updateContactForm" method="post">
+                        <input type="hidden" id="contactId" name="contactId" value="{id}">
+                        <div class="form-group">
+                            <label for="id">Contact Form ID:</label>&nbsp;
+                            <input type="text" class="form-control" name="idh" placeholder="Contact Form ID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="name"> Full Name:</label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"> Contact NO:</label>
+                            <input type="text" class="form-control" id="contactNo"  name="contactNo" placeholder="Enter Contact NO" required>
+                        </div> 
+                        <div class="form-group">
+                            <label for="subject">Email:</label>&nbsp;&nbsp;&nbsp;
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>&nbsp;
+                            <textarea class="form-control" id="message" name="message" placeholder="Type Message" required></textarea>
+                        </div>
+                        <center>
+                            <button type="submit" class="btn btn-lg btn-primary button" id="updateButton" name="submit">  Update </button>
+                            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                            <button type="submit" class="btn btn-lg btn-primary button" name="submit" onclick="window.location.href='adminpage.html'">  Cancel </button>
+                        </center>
+                        <br>
+                       
+
+						<div id="click_here">
+							<a href="adminpage.html"><center> Back to Admin Panel </center></a>
+						</div>
+					</form>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            const form = document.getElementById('updateContactForm');
+
+                            form.addEventListener('submit', function(e) {
+                                e.preventDefault();
+
+                                const contactId = document.getElementById('contactId').value;
+                                const contact = {
+                                    fullName: document.getElementById('fullName').value,
+                                    contactNo: document.getElementById('contactNo').value,
+                                    email: document.getElementById('email').value,
+                                    message: document.getElementById('message').value
+                                };
+
+                                fetch(`/updateContact/${contactId}`, {
+                                    method: 'PUT',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify(contact)
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    console.log('Success:', data);
+                                    alert('Contact updated successfully!');
+                                    form.reset();
+                                })
+                                .catch((error) => {
+                                    console.error('Error:', error);
+                                    alert('Error updating contact. Please try again.');
+                                });
+                            });
+                        });
+                    </script>
+				</div>       
+			</div>
+		</div>
+    </div>  
+</body>
+</html>
